@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p .claude/skills)",
+      "Bash(cp framework/skills/* .claude/skills/)",
+      "Bash(cp -r framework/templates .)",
+      "Bash(cp -r framework/roles .)",
+      "Bash(cp framework/CLAUDE.md CLAUDE.md)",
+      "Bash(sed -i 's|framework/templates/|templates/|g' .claude/skills/new-backend-spec.md .claude/skills/new-experience.md .claude/skills/new-frontend-spec.md .claude/skills/new-outcome.md)",
+      "Bash(sed -i 's|framework/skills/{role}/|.claude/skills/|g' CLAUDE.md)",
+      "Bash(sed -i 's|framework/roles/{role-name}.yaml|roles/{role-name}.yaml|g' product-template/.outcome/config.yaml)"
+    ]
+  }
+}

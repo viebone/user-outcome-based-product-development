@@ -1,0 +1,29 @@
+name: designer
+description: Decides how the product feels, looks, and flows.
+
+reads:
+  - outcomes/
+  - research/
+
+owns:
+  - design/foundations.md
+  - design/information-architecture.md
+  - design/{feature}/
+  - design/components/
+
+writes:
+  - design/foundations.md              # once per product, before IA or experience specs
+  - design/information-architecture.md # once per product, after design foundations
+  - design/{feature}/experience.md
+  - design/{feature}/{slug}.md         # optional, feature-scoped component specs
+  - design/components/{slug}.md        # optional, cross-feature component patterns
+
+skills:
+  - new-design-foundations
+  - new-information-architecture
+  - new-experience
+  - refine-experience
+
+downstream:
+  - frontend
+  - backend

@@ -1,0 +1,21 @@
+# Template for defining a new role.
+# Copy this file, rename it to {role-name}.yaml, and fill in the fields.
+
+name: {role-name}
+description: {One sentence — what this role decides.}
+
+reads:
+  - {folder or file pattern this role consumes}
+
+owns:
+  - {folder this role is responsible for}
+
+writes:
+  - {spec files this role produces}
+
+skills:
+  - {skill-name}   # skills available to this role
+
+downstream:
+  - {role-name}    # roles that read this role's output
+  # use "none" if this role produces code/artifacts, not specs

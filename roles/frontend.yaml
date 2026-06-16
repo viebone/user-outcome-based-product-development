@@ -1,0 +1,22 @@
+name: frontend
+description: Decides how the experience is built in the browser.
+
+reads:
+  - outcomes/
+  - design/{feature}/experience.md
+  - design/{feature}/          # feature-scoped component specs
+  - design/components/
+
+owns:
+  - frontend/specs/
+  - frontend/src/
+
+writes:
+  - frontend/specs/{feature}/architecture.md
+
+skills:
+  - new-frontend-spec
+  - implement-frontend
+
+downstream:
+  - none  # frontend is a leaf role (produces code, not specs for others)

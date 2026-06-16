@@ -1,0 +1,20 @@
+name: pm
+description: Decides what gets built and when, always grounded in research.
+
+reads:
+  - research/
+
+owns:
+  - outcomes/
+
+writes:
+  - outcomes/{slug}.md
+
+skills:
+  - new-outcome
+  - prioritize
+
+downstream:
+  - designer
+  - frontend  # can read outcomes directly for technical context
+  - backend   # can read outcomes directly for technical context
