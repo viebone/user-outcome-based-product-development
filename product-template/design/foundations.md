@@ -15,6 +15,16 @@ created: YYYY-MM-DD
 <!-- One paragraph. Who they are, what they carry emotionally, what they're
      trying to accomplish. This is the lens for every design decision. -->
 
+## AI Involvement
+<!-- Decide once, product-wide, before any experience spec. Revisit only if
+     this changes — every downstream spec inherits this answer. -->
+**Level:** none | ai-assisted | ai-native
+<!-- none        — no AI-facing behavior anywhere in this product
+     ai-assisted — AI is a feature within an otherwise traditional flow
+     ai-native   — AI is the primary way users accomplish the outcome -->
+**Where it shows up:** <!-- e.g. "a chat panel for querying data", "smart suggestions in a form" -->
+**Why:** <!-- which outcome(s) this serves -->
+
 ## UX Principles
 
 ### 1. {Principle Name}

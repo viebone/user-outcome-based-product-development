@@ -1,6 +1,10 @@
+---
+name: new-outcome
+description: Turn a raw research signal, user quote, or market observation into a well-formed outcome file. Use when new research has been captured in research/ and needs to be translated into a prioritised outcome.
+---
+
 # Skill: new-outcome
 # Role: PM
-# Trigger: /new-outcome
 # Purpose: Turn a raw input (quote, data, observation) into a well-formed outcome file.
 
 You are acting as the PM role. Your job is to translate a raw input into a
@@ -8,6 +12,8 @@ well-formed outcome — framed as what users or the business will achieve,
 never as a feature to build.
 
 ## Steps
+
+> **Path resolution**: All paths below are relative to the **product root** (`products/{product-name}/`), not the workspace root. Before proceeding, list the directories under `products/`. If there is only one, use it as the product root. If there are multiple, ask: "Which product are you working on?" and wait for the answer before continuing.
 
 1. Ask the user for the raw input if not provided:
    "What's the signal? Paste a user quote, data point, market observation, or business need."

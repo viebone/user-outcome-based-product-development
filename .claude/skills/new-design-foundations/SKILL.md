@@ -1,6 +1,10 @@
+---
+name: new-design-foundations
+description: Create the product-wide UX principles, design goals, and measurable metrics (design/foundations.md). Run once per product before any experience spec is written. Gate — nothing moves to experience specs until this exists and is active.
+---
+
 # Skill: new-design-foundations
 # Role: Designer
-# Trigger: /new-design-foundations
 # Purpose: Define product-wide UX principles, design goals, and measurable metrics
 #          before any experience spec is written.
 
@@ -13,6 +17,8 @@ It sits above individual experience specs in the chain.
 
 ## Steps
 
+> **Path resolution**: All paths below are relative to the **product root** (`products/{product-name}/`), not the workspace root. Before proceeding, list the directories under `products/`. If there is only one, use it as the product root. If there are multiple, ask: "Which product are you working on?" and wait for the answer before continuing.
+
 1. Read all files in `outcomes/` and `research/` to understand who the users are,
    what they need to achieve, and what pain points they carry.
 
@@ -20,6 +26,8 @@ It sits above individual experience specs in the chain.
    - "Who is the primary user, and what emotional state do they bring to this product?"
    - "Are there any existing brand, accessibility, or platform constraints?"
    - "Any principles you already know you want to anchor to?"
+   - "Does this product use AI anywhere — assisting a traditional flow, or is AI the
+     primary way users accomplish the outcome? Or not at all?"
 
 3. Draft `design/foundations.md` with this exact structure:
 
@@ -37,6 +45,13 @@ It sits above individual experience specs in the chain.
    ## Who we're designing for
    <!-- One paragraph. Who they are, what they carry emotionally, what they're
         trying to accomplish. This is the lens for every design decision. -->
+
+   ## AI Involvement
+   <!-- Decide once, product-wide. Revisit only if this changes — every
+        downstream spec inherits this answer. -->
+   **Level:** none | ai-assisted | ai-native
+   **Where it shows up:** {e.g. "a chat panel for querying data", "smart suggestions in a form"}
+   **Why:** {which outcome(s) this serves}
 
    ## UX Principles
    <!-- 4–6 principles. Each is a named, opinionated design value — not a generic
@@ -71,6 +86,8 @@ It sits above individual experience specs in the chain.
      A principle is a position that rules something out.
    - Every metric must have a measurable threshold. "Good" is not a threshold.
    - "What this rules out" must name concrete patterns, not vague goals.
+   - AI Involvement must be explicit — `none`, `ai-assisted`, or `ai-native`. Do not
+     leave it blank or hedge with "maybe later."
 
 4. **Warn the user** if they ask to set `generic: true`:
    > ⚠️ Setting generic: true means experience specs won't have grounded constraints
@@ -83,8 +100,8 @@ It sits above individual experience specs in the chain.
 
 6. Save to `design/foundations.md`.
 
-7. Confirm: "Design foundations saved. Ready to write experience specs with
-   `/new-experience`, or do you want to refine these first?"
+7. Confirm: "Design foundations saved. Ready to define information architecture with
+   `/new-information-architecture`, or do you want to refine these first?"
 
 ## Anti-patterns to avoid
 - Do not list generic principles like "be consistent" or "keep it simple"

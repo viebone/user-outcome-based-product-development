@@ -7,7 +7,7 @@ reads:
 
 owns:
   - backend/specs/
-  - backend/src/
+  - backend/src/   # includes the pre-provisioned AI provider abstraction in backend/src/llm/
 
 writes:
   - backend/specs/{feature}/api.md

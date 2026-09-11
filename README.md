@@ -25,7 +25,9 @@ outcomes/                              WHY — what users or the business needs 
     ↓
 design/foundations.md                  FEEL — product-wide UX principles, design goals + paradigm
     ↓
-design/information-architecture.md     STRUCTURE — navigation, taxonomy, key pathways
+design/information-architecture.md     STRUCTURE — navigation, zones, taxonomy (product-wide)
+    ↓
+design/visual-design.md                LOOK — colour, typography, spacing, component style (product-wide)
     ↓
 design/{feature}/experience.md         WHAT — user flow, local IA, interactions, evaluation metrics
 design/components/                     WHAT (detail) — specific component behavior [optional]
@@ -57,7 +59,7 @@ Default roles:
 | Role | Owns | Decides |
 |---|---|---|
 | PM | `outcomes/` | What gets built and when |
-| Designer | `design/foundations.md`, `design/{feature}/`, `design/components/` | UX principles, design goals, how it feels/looks/flows |
+| Designer | `design/foundations.md`, `design/information-architecture.md`, `design/visual-design.md`, `design/{feature}/`, `design/components/` | UX principles, design goals, visual language, structure, how it feels/looks/flows |
 | Frontend | `frontend/specs/` | How it's built in the browser |
 | Backend | `backend/specs/` | How it's built on the server |
 
@@ -102,6 +104,7 @@ user-outcome-based-product-development/   ← open this as your VS Code workspac
 │       ├── new-outcome.md
 │       ├── new-design-foundations.md
 │       ├── new-information-architecture.md
+│       ├── new-visual-design.md
 │       ├── new-experience.md
 │       ├── new-frontend-spec.md
 │       ├── new-backend-spec.md
@@ -126,6 +129,15 @@ session automatically — no copying, no setup per product. MCPs configured glob
 ---
 
 ## Starting a New Product
+
+Run `/new-product`. It scaffolds `products/my-new-product` from `product-template`,
+initializes it as its own git repo, asks the setup questions (what you're building, tech
+stack, automation levels), captures the first research signal, and then drives the full
+chain — outcome → foundations → experience → IA → visual design → backend spec →
+frontend spec → implement backend → implement frontend — one gate at a time, pausing
+wherever you want.
+
+Equivalent by hand, if you'd rather do it manually:
 
 ```bash
 # 1. Create the products folder if it doesn't exist
@@ -165,9 +177,11 @@ The framework core does not change. New roles plug in via the same pattern.
 
 | Skill | Role | What it does |
 |---|---|---|
+| `/new-product` | Orchestrator | Scaffolds a new product and drives the full chain, stage by stage |
 | `/new-outcome` | PM | Turns raw input into a well-formed outcome file |
 | `/new-design-foundations` | Designer | Creates product-wide UX principles, design goals + metrics |
-| `/new-information-architecture` | Designer | Defines navigation model, content taxonomy, key pathways |
+| `/new-information-architecture` | Designer | Defines navigation model, structural zones, key pathways |
+| `/new-visual-design` | Designer | Defines colour, typography, spacing, and component aesthetics |
 | `/new-experience` | Designer | Drafts an experience spec from an outcome |
 | `/new-frontend-spec` | Frontend | Translates experience spec into frontend architecture |
 | `/new-backend-spec` | Backend | Translates experience spec into backend API spec |

@@ -1,6 +1,10 @@
+---
+name: new-backend-spec
+description: Translate an experience spec into a backend architecture spec — data models, API endpoints, and business logic (backend/specs/{slug}/api.md). Run after the experience spec is ready, in parallel with new-frontend-spec.
+---
+
 # Skill: new-backend-spec
 # Role: Backend Engineer
-# Trigger: /new-backend-spec
 # Purpose: Translate an experience spec into a backend architecture spec.
 
 You are acting as the Backend Engineer role. Your job is to decide how the
@@ -9,8 +13,11 @@ and business logic.
 
 ## Steps
 
+> **Path resolution**: All paths below are relative to the **product root** (`products/{product-name}/`), not the workspace root. Before proceeding, list the directories under `products/`. If there is only one, use it as the product root. If there are multiple, ask: "Which product are you working on?" and wait for the answer before continuing.
+
 1. Ask which experience spec this implements, if not specified.
    Read the full chain: `outcomes/{slug}.md` → `design/{slug}/experience.md`
+   → `design/foundations.md` (check the **AI Involvement** field).
 
 2. Ask about the backend tech stack if not defined in the project CLAUDE.md.
 
@@ -74,6 +81,10 @@ and business logic.
    - Data Models: describe entities and relationships, not exact SQL (unless directive: high)
    - API Endpoints: one section per endpoint with request/response shape
    - Business Logic: rules and validations the server enforces
+   - If the experience spec calls for AI-facing behavior, confirm `design/foundations.md`
+     AI Involvement is not `none`, then wire into the existing `backend/src/llm/` provider
+     abstraction — name the provider and model explicitly under Tech Decisions (e.g.
+     `providers.gemini("gemini-2.5-flash")`) rather than inventing a new client.
 
 4. Coordinate the API contract with the frontend spec:
    Check `frontend/specs/{feature}/architecture.md` if it exists.
@@ -81,8 +92,8 @@ and business logic.
 
 5. Save to `backend/specs/{feature-slug}/api.md`.
 
-6. Confirm: "Backend spec saved. Ready to implement, or do you want to
-   review the spec first?"
+6. Confirm: "Backend spec saved. Ready to implement with `/implement-backend`,
+   or do you want to review the spec first?"
 
 ## Anti-patterns to avoid
 - Do not make UX or visual decisions

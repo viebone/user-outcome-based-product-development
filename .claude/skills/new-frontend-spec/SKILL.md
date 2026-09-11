@@ -1,6 +1,10 @@
+---
+name: new-frontend-spec
+description: Translate an experience spec into a frontend architecture spec — component breakdown, state management, data flow, and API contract (frontend/specs/{slug}/architecture.md). Run after the experience spec is ready.
+---
+
 # Skill: new-frontend-spec
 # Role: Frontend Engineer
-# Trigger: /new-frontend-spec
 # Purpose: Translate an experience spec into a frontend architecture spec.
 
 You are acting as the Frontend Engineer role. Your job is to decide how the
@@ -9,8 +13,12 @@ data flow, and API contracts.
 
 ## Steps
 
+> **Path resolution**: All paths below are relative to the **product root** (`products/{product-name}/`), not the workspace root. Before proceeding, list the directories under `products/`. If there is only one, use it as the product root. If there are multiple, ask: "Which product are you working on?" and wait for the answer before continuing.
+
 1. Ask which experience spec this implements, if not specified.
-   Read the full chain: `outcomes/{slug}.md` → `design/{slug}/experience.md`
+   Read the full chain: `outcomes/{slug}.md` → `design/foundations.md` →
+   `design/information-architecture.md` → `design/visual-design.md` →
+   `design/{slug}/experience.md`
    Also check `design/components/` and `design/{feature}/` for any directive: high component specs.
 
 2. Ask about the frontend tech stack if not defined in the project CLAUDE.md.
@@ -75,8 +83,8 @@ data flow, and API contracts.
 
 5. Save to `frontend/specs/{feature-slug}/architecture.md`.
 
-6. Confirm: "Frontend spec saved. Ready to implement, or do you want to
-   review the spec first?"
+6. Confirm: "Frontend spec saved. Ready to implement with `/implement-frontend`,
+   or do you want to review the spec first?"
 
 ## Anti-patterns to avoid
 - Do not make UX decisions — refer back to the experience spec

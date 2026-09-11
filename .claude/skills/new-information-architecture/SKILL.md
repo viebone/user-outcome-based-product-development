@@ -1,6 +1,10 @@
+---
+name: new-information-architecture
+description: Define the product's navigation model, content taxonomy, key pathways, and entry points (design/information-architecture.md). Run once per product after design foundations are complete, before any experience spec is written.
+---
+
 # Skill: new-information-architecture
 # Role: Designer
-# Trigger: /new-information-architecture
 # Purpose: Define the product's navigation model, content taxonomy, key pathways,
 #          and entry points before any experience spec is written.
 
@@ -13,6 +17,8 @@ Individual experience specs define local IA for a single feature; this defines w
 they hang on.
 
 ## Steps
+
+> **Path resolution**: All paths below are relative to the **product root** (`products/{product-name}/`), not the workspace root. Before proceeding, list the directories under `products/`. If there is only one, use it as the product root. If there are multiple, ask: "Which product are you working on?" and wait for the answer before continuing.
 
 1. Check that `design/foundations.md` exists and is not in `draft` status.
    If it does not exist or is still a draft, stop and say:
@@ -78,8 +84,8 @@ they hang on.
 
 6. Save to `design/information-architecture.md` and set `status: active`.
 
-7. Confirm: "Information architecture saved. Ready to write experience specs with
-   `/new-experience`, or do you want to refine this first?"
+7. Confirm: "Information architecture saved. Ready to define visual design with
+   `/new-visual-design`, or do you want to refine this first?"
 
 ## Anti-patterns to avoid
 - Do not define per-feature layout here — that belongs in individual experience specs

@@ -8,7 +8,21 @@
       "Bash(cp framework/CLAUDE.md CLAUDE.md)",
       "Bash(sed -i 's|framework/templates/|templates/|g' .claude/skills/new-backend-spec.md .claude/skills/new-experience.md .claude/skills/new-frontend-spec.md .claude/skills/new-outcome.md)",
       "Bash(sed -i 's|framework/skills/{role}/|.claude/skills/|g' CLAUDE.md)",
-      "Bash(sed -i 's|framework/roles/{role-name}.yaml|roles/{role-name}.yaml|g' product-template/.outcome/config.yaml)"
+      "Bash(sed -i 's|framework/roles/{role-name}.yaml|roles/{role-name}.yaml|g' product-template/.outcome/config.yaml)",
+      "Bash(wsl bash *)",
+      "Bash(npm run *)",
+      "Bash(curl -s \"http://127.0.0.1:8000/api/market-health/openings?range=this_year\")",
+      "Bash(python -c \"import sys, json; d = json.load\\(sys.stdin\\); print\\('range:', d['range']\\); print\\('data points:', len\\(d['data']\\)\\); print\\('first:', d['data'][0]\\); print\\('last:', d['data'][-1]\\); print\\('summary[:80]:', d['summary'][:80]\\)\")",
+      "Bash(cd \"c:/Users/viebo/Documents/personal/projects/user-outcome-based-product-development\" && rm .claude/skills/new-outcome.md .claude/skills/new-design-foundations.md .claude/skills/new-information-architecture.md .claude/skills/new-visual-design.md .claude/skills/new-experience.md .claude/skills/new-frontend-spec.md .claude/skills/new-backend-spec.md .claude/skills/implement-frontend.md .claude/skills/implement-backend.md && echo \"done\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\viebo\\\\Documents\\\\personal\\\\projects\\\\user-outcome-based-product-development\\\\.claude\\\\skills\\\\new-product\")",
+      "Bash(git submodule *)",
+      "Bash(git config *)",
+      "Bash(cat ~/.claude/settings.json 2>&1 | head -c 3000)",
+      "Read(//c/Users/viebo/.claude/**)",
+      "Bash(node .claude/hooks/session-start.js)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\viebo\\Documents\\personal\\projects\\user-outcome-based-product-development\\.claude\\skills"
     ]
   }
 }
